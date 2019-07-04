@@ -65,7 +65,6 @@ class TodoController {
         message: "Todo name is required"
       });
     }   
-
     else if (todoToUpdate) {
       const newTodos = todos.map(each => {
         if (each.id == id) {
