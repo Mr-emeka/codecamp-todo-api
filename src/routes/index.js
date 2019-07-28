@@ -1,6 +1,6 @@
 // declare routes
-const Router = require('express');
-const TodoController = require('../controllers')
+import Router from 'express';
+import TodoController  from '../controllers/'
 
 // initialize Router
 const appRouter = Router();

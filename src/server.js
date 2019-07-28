@@ -1,13 +1,13 @@
 // import express
-const express = require('express');
+import express from 'express';
 
 // import bodyParser
-const bodyParser = require('body-parser');
+import bodyParser from 'body-parser';
 
 // import dotenv for environment variables management
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 
-const appRouter = require('./routes')
+import appRouter from './routes';
 
 // instantiate dotenv
 dotenv.config();
@@ -19,11 +19,29 @@ const app = express();
 app.use(bodyParser.json({ extended: true }));
 
 // handles all the routing
-app.use(appRouter);
+app.use("/api/v1", appRouter);
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 3000;
 
 // start the express server
 app.listen(PORT, () => {
   console.log(`App started on http://localhost:${PORT}`);
 });
+
+/*
+call back
+(console.log('hello'),(res,err)=>{
+  console.log('thanks');
+})
+
+//Promise
+(console.log('thanks')).then(res=>console.log('thanks'))
+.catch(e=>e);
+
+const fetch = async()=>{
+  try{
+    await console.log('hello');
+    await com
+  }
+}
+*/
